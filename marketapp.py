@@ -40,7 +40,7 @@ def page1():
 
 
     if not st.session_state.indices_results_available: 
-        indices = ["VOO", "QQQ"] # POC only. Alphavantage does not provide data on stock indices anymore. Will have to obtain this data elsewhere. 
+        indices = ["VOO", "QQQ"] # POC only. Alphavantage does not provide data on stock indices anymore. Will have to obtain this data elsewhere. VOO and QQQ are approximates. 
         for stock in indices: 
             image_path=f"images/{stock}.png"   
             st.session_state.image_path=image_path
@@ -61,9 +61,9 @@ def page1():
         st.subheader("Stock Indexes")
         col1, col2 = st.columns(2)
         with col1:
-            st.image(f"images/{indices[0]}.png", caption=f"S&P 500 Chart", width='stretch')  
+            st.image(f"images/VOO.png", caption=f"S&P 500 Chart", width='stretch')  
         with col2:
-            st.image(f"images/{indices[1]}.png", caption=f"Nasdaq-100 Chart", width='stretch')  
+            st.image(f"images/QQQ.png", caption=f"Nasdaq-100 Chart", width='stretch')  
         
     
     st.sidebar.header("About")
